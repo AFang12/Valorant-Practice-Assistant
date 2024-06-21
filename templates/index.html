@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS Recorder</title>
+</head>
+<body>
+    <h1>OBS Recorder</h1>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
+    <form id="analyzeForm">
+        <input type="text" id="video_path" name="video_path" placeholder="Enter video path">
+        <button type="button" onclick="analyzeVideo()">Analyze Video</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function startRecording() {
+            fetch('/start_recording', {
+                method: 'POST'
+            }).then(response => response.json()).then(data => {
+                console.log(data);
+            });
+        }
+
+        function stopRecording() {
+            fetch('/stop_recording', {
+                method: 'POST'
+            }).then(response => response.json()).then(data => {
+                console.log(data);
+            });
+        }
+
+        function analyzeVideo() {
+            const form = document.getElementById('analyzeForm');
+            const formData = new FormData(form);
+            fetch('/analyze', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json()).then(data => {
+                document.getElementById('result').innerText = JSON.stringify(data);
+            });
+        }
+    </script>
+</body>
+</html>

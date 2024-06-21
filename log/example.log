@@ -1,0 +1,523 @@
+2024-06-20 22:14:14.150 (1718892854.150863) Using proactor: IocpProactor
+2024-06-20 22:14:14.179 (1718892854.179863) Received message:
+{
+  "d": {
+    "authentication": {
+      "challenge": "7bb2vbt4z+iN/WauLfRG9J7i3kkfPPa34ojwPqxLR1A=",
+      "salt": "ozaWAmOCFYdixhbIebvdispVzNmsMBlv5vpGhDGMTdA="
+    },
+    "obsWebSocketVersion": "5.2.3",
+    "rpcVersion": 1
+  },
+  "op": 0
+}
+2024-06-20 22:14:14.180 (1718892854.180863) Sending Identify message:
+{
+  "op": 1,
+  "d": {
+    "rpcVersion": 1,
+    "authentication": "B+1+hcoidSK38JuxZ2BZmmvAG1jxMAxJ7E20hQ/6yGI=",
+    "ignoreNonFatalRequestChecks": false
+  }
+}
+2024-06-20 22:14:14.180 (1718892854.180863) Received message:
+{
+  "d": {
+    "negotiatedRpcVersion": 1
+  },
+  "op": 2
+}
+2024-06-20 22:14:14.180 (1718892854.180863) Sending Request batch message:
+{
+  "op": 8,
+  "d": {
+    "requestId": "5f4f17f4-2f0f-11ef-8203-2c0da73722be",
+    "requests": [
+      {
+        "requestType": "GetSceneList"
+      }
+    ],
+    "haltOnFailure": false
+  }
+}
+2024-06-20 22:14:14.181 (1718892854.181864) Received message:
+{
+  "d": {
+    "requestId": "5f4f17f4-2f0f-11ef-8203-2c0da73722be",
+    "results": [
+      {
+        "requestStatus": {
+          "code": 100,
+          "result": true
+        },
+        "requestType": "GetSceneList",
+        "responseData": {
+          "currentPreviewSceneName": null,
+          "currentProgramSceneName": "val-autorecord",
+          "scenes": [
+            {
+              "sceneIndex": 0,
+              "sceneName": "\u573a\u666f 2"
+            },
+            {
+              "sceneIndex": 1,
+              "sceneName": "\u663e\u793a\u5668"
+            },
+            {
+              "sceneIndex": 2,
+              "sceneName": "val-autorecord"
+            },
+            {
+              "sceneIndex": 3,
+              "sceneName": "\u97f3\u9891"
+            },
+            {
+              "sceneIndex": 4,
+              "sceneName": "\u573a\u666f 3"
+            },
+            {
+              "sceneIndex": 5,
+              "sceneName": "Vtb"
+            },
+            {
+              "sceneIndex": 6,
+              "sceneName": "\u8d85\u7f8e\u4e3d3d"
+            },
+            {
+              "sceneIndex": 7,
+              "sceneName": "BH3"
+            },
+            {
+              "sceneIndex": 8,
+              "sceneName": "TM"
+            },
+            {
+              "sceneIndex": 9,
+              "sceneName": "\u6d4f\u89c8\u5668"
+            },
+            {
+              "sceneIndex": 10,
+              "sceneName": "bgm"
+            },
+            {
+              "sceneIndex": 11,
+              "sceneName": "\u5b66\u4e60"
+            },
+            {
+              "sceneIndex": 12,
+              "sceneName": "kvk"
+            },
+            {
+              "sceneIndex": 13,
+              "sceneName": "genshin"
+            },
+            {
+              "sceneIndex": 14,
+              "sceneName": "ns"
+            },
+            {
+              "sceneIndex": 15,
+              "sceneName": "apex"
+            },
+            {
+              "sceneIndex": 16,
+              "sceneName": "lol"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "op": 9
+}
+2024-06-20 22:14:14.181 (1718892854.181864) the val-autorecord scenes found
+2024-06-20 22:14:14.181 (1718892854.181864) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StopRecord",
+    "requestId": "5f4f3f0e-2f0f-11ef-a916-2c0da73722be"
+  }
+}
+2024-06-20 22:14:14.181 (1718892854.181864) Received message:
+{
+  "d": {
+    "requestId": "5f4f3f0e-2f0f-11ef-a916-2c0da73722be",
+    "requestStatus": {
+      "code": 501,
+      "result": false
+    },
+    "requestType": "StopRecord"
+  },
+  "op": 7
+}
+2024-06-20 22:14:14.181 (1718892854.181864) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StartRecord",
+    "requestId": "5f4f3f0f-2f0f-11ef-8992-2c0da73722be"
+  }
+}
+2024-06-20 22:14:14.182 (1718892854.182864) Received message:
+{
+  "d": {
+    "requestId": "5f4f3f0f-2f0f-11ef-8992-2c0da73722be",
+    "requestStatus": {
+      "code": 100,
+      "result": true
+    },
+    "requestType": "StartRecord"
+  },
+  "op": 7
+}
+2024-06-20 22:14:14.798 (1718892854.798946) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StopRecord",
+    "requestId": "5fad67d6-2f0f-11ef-8526-2c0da73722be"
+  }
+}
+2024-06-20 22:14:14.798 (1718892854.798946) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": false,
+      "outputPath": null,
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STARTING"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-20 22:14:14.798 (1718892854.798946) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": true,
+      "outputPath": "D:/Cpan/yonghu/A/Videos/2024-06-20 22-14-14.mp4",
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STARTED"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-20 22:14:14.798 (1718892854.798946) Received message:
+{
+  "d": {
+    "requestId": "5fad67d6-2f0f-11ef-8526-2c0da73722be",
+    "requestStatus": {
+      "code": 100,
+      "result": true
+    },
+    "requestType": "StopRecord",
+    "responseData": {
+      "outputPath": "D:/Cpan/yonghu/A/Videos/2024-06-20 22-14-14.mp4"
+    }
+  },
+  "op": 7
+}
+2024-06-20 22:14:14.799 (1718892854.799948) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": false,
+      "outputPath": null,
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STOPPING"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-20 22:23:05.784 (1718893385.784532) Using proactor: IocpProactor
+2024-06-20 22:23:05.813 (1718893385.813532) Received message:
+{
+  "d": {
+    "authentication": {
+      "challenge": "nR3CfLzgWr948n+DHDwC62X+NmHLXzClU5rdNjRKRbQ=",
+      "salt": "ozaWAmOCFYdixhbIebvdispVzNmsMBlv5vpGhDGMTdA="
+    },
+    "obsWebSocketVersion": "5.2.3",
+    "rpcVersion": 1
+  },
+  "op": 0
+}
+2024-06-20 22:23:05.813 (1718893385.813532) Sending Identify message:
+{
+  "op": 1,
+  "d": {
+    "rpcVersion": 1,
+    "authentication": "GhccqK1cXUmUh/5ercmIqcXHYabpRo74U6MZOrbNiG4=",
+    "ignoreNonFatalRequestChecks": false
+  }
+}
+2024-06-20 22:23:05.815 (1718893385.815533) Received message:
+{
+  "d": {
+    "negotiatedRpcVersion": 1
+  },
+  "op": 2
+}
+2024-06-20 22:23:05.815 (1718893385.815533) Sending Request batch message:
+{
+  "op": 8,
+  "d": {
+    "requestId": "9c301b3f-2f10-11ef-acc9-2c0da73722be",
+    "requests": [
+      {
+        "requestType": "GetSceneList"
+      }
+    ],
+    "haltOnFailure": false
+  }
+}
+2024-06-20 22:23:05.815 (1718893385.815533) Received message:
+{
+  "d": {
+    "requestId": "9c301b3f-2f10-11ef-acc9-2c0da73722be",
+    "results": [
+      {
+        "requestStatus": {
+          "code": 100,
+          "result": true
+        },
+        "requestType": "GetSceneList",
+        "responseData": {
+          "currentPreviewSceneName": null,
+          "currentProgramSceneName": "val-autorecord",
+          "scenes": [
+            {
+              "sceneIndex": 0,
+              "sceneName": "\u573a\u666f 2"
+            },
+            {
+              "sceneIndex": 1,
+              "sceneName": "\u663e\u793a\u5668"
+            },
+            {
+              "sceneIndex": 2,
+              "sceneName": "val-autorecord"
+            },
+            {
+              "sceneIndex": 3,
+              "sceneName": "\u97f3\u9891"
+            },
+            {
+              "sceneIndex": 4,
+              "sceneName": "\u573a\u666f 3"
+            },
+            {
+              "sceneIndex": 5,
+              "sceneName": "Vtb"
+            },
+            {
+              "sceneIndex": 6,
+              "sceneName": "\u8d85\u7f8e\u4e3d3d"
+            },
+            {
+              "sceneIndex": 7,
+              "sceneName": "BH3"
+            },
+            {
+              "sceneIndex": 8,
+              "sceneName": "TM"
+            },
+            {
+              "sceneIndex": 9,
+              "sceneName": "\u6d4f\u89c8\u5668"
+            },
+            {
+              "sceneIndex": 10,
+              "sceneName": "bgm"
+            },
+            {
+              "sceneIndex": 11,
+              "sceneName": "\u5b66\u4e60"
+            },
+            {
+              "sceneIndex": 12,
+              "sceneName": "kvk"
+            },
+            {
+              "sceneIndex": 13,
+              "sceneName": "genshin"
+            },
+            {
+              "sceneIndex": 14,
+              "sceneName": "ns"
+            },
+            {
+              "sceneIndex": 15,
+              "sceneName": "apex"
+            },
+            {
+              "sceneIndex": 16,
+              "sceneName": "lol"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "op": 9
+}
+2024-06-20 22:23:05.816 (1718893385.816532) the val-autorecord scenes found
+2024-06-20 22:23:05.816 (1718893385.816532) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StopRecord",
+    "requestId": "9c30424c-2f10-11ef-8326-2c0da73722be"
+  }
+}
+2024-06-20 22:23:05.816 (1718893385.816532) Received message:
+{
+  "d": {
+    "requestId": "9c30424c-2f10-11ef-8326-2c0da73722be",
+    "requestStatus": {
+      "code": 501,
+      "result": false
+    },
+    "requestType": "StopRecord"
+  },
+  "op": 7
+}
+2024-06-20 22:23:05.816 (1718893385.816532) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StartRecord",
+    "requestId": "9c30424d-2f10-11ef-be98-2c0da73722be"
+  }
+}
+2024-06-20 22:23:05.816 (1718893385.816532) Received message:
+{
+  "d": {
+    "requestId": "9c30424d-2f10-11ef-be98-2c0da73722be",
+    "requestStatus": {
+      "code": 100,
+      "result": true
+    },
+    "requestType": "StartRecord"
+  },
+  "op": 7
+}
+2024-06-20 22:23:07.738 (1718893387.738065) Sending Request message:
+{
+  "op": 6,
+  "d": {
+    "requestType": "StopRecord",
+    "requestId": "9d55762a-2f10-11ef-a830-2c0da73722be"
+  }
+}
+2024-06-20 22:23:07.739 (1718893387.739065) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": false,
+      "outputPath": null,
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STARTING"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-20 22:23:07.739 (1718893387.739065) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": true,
+      "outputPath": "D:/Cpan/yonghu/A/Videos/2024-06-20 22-23-05.mp4",
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STARTED"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-20 22:23:07.739 (1718893387.739065) Received message:
+{
+  "d": {
+    "requestId": "9d55762a-2f10-11ef-a830-2c0da73722be",
+    "requestStatus": {
+      "code": 100,
+      "result": true
+    },
+    "requestType": "StopRecord",
+    "responseData": {
+      "outputPath": "D:/Cpan/yonghu/A/Videos/2024-06-20 22-23-05.mp4"
+    }
+  },
+  "op": 7
+}
+2024-06-20 22:23:07.739 (1718893387.739065) Received message:
+{
+  "d": {
+    "eventData": {
+      "outputActive": false,
+      "outputPath": null,
+      "outputState": "OBS_WEBSOCKET_OUTPUT_STOPPING"
+    },
+    "eventIntent": 64,
+    "eventType": "RecordStateChanged"
+  },
+  "op": 5
+}
+2024-06-21 17:18:18.161 (1718961498.161184) Using proactor: IocpProactor
+2024-06-21 17:19:24.048 (1718961564.048168) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:19:24.048 (1718961564.048168) [33mPress CTRL+C to quit[0m
+2024-06-21 17:19:24.049 (1718961564.049170)  * Restarting with stat
+2024-06-21 17:19:24.434 (1718961564.434964)  * Debugger is active!
+2024-06-21 17:19:24.441 (1718961564.441962)  * Debugger PIN: 132-571-653
+2024-06-21 17:20:09.556 (1718961609.556284) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:20:09.556 (1718961609.556284) [33mPress CTRL+C to quit[0m
+2024-06-21 17:20:09.557 (1718961609.557285)  * Restarting with stat
+2024-06-21 17:20:09.945 (1718961609.945467)  * Debugger is active!
+2024-06-21 17:20:09.952 (1718961609.952465)  * Debugger PIN: 132-571-653
+2024-06-21 17:21:04.619 (1718961664.619459) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:21:04.619 (1718961664.619459) [33mPress CTRL+C to quit[0m
+2024-06-21 17:21:04.620 (1718961664.620461)  * Restarting with stat
+2024-06-21 17:21:05.003 (1718961665.003102)  * Debugger is active!
+2024-06-21 17:21:05.011 (1718961665.011322)  * Debugger PIN: 132-571-653
+2024-06-21 17:22:32.790 (1718961752.790125) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:22:32.790 (1718961752.790125) [33mPress CTRL+C to quit[0m
+2024-06-21 17:22:32.791 (1718961752.791127)  * Restarting with stat
+2024-06-21 17:22:33.172 (1718961753.172191)  * Debugger is active!
+2024-06-21 17:22:33.179 (1718961753.179191)  * Debugger PIN: 132-571-653
+2024-06-21 17:23:10.627 (1718961790.627660) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:23:10.627 (1718961790.627660) [33mPress CTRL+C to quit[0m
+2024-06-21 17:23:10.628 (1718961790.628660)  * Restarting with stat
+2024-06-21 17:23:11.018 (1718961791.018411)  * Debugger is active!
+2024-06-21 17:23:11.024 (1718961791.024409)  * Debugger PIN: 132-571-653
+2024-06-21 17:25:16.389 (1718961916.389878)  * Detected change in 'E:\\botDet\\app.py', reloading
+2024-06-21 17:25:16.431 (1718961916.431396)  * Restarting with stat
+2024-06-21 17:25:16.831 (1718961916.831075)  * Debugger is active!
+2024-06-21 17:25:16.839 (1718961916.839077)  * Debugger PIN: 132-571-653
+2024-06-21 17:25:18.864 (1718961918.864413)  * Detected change in 'E:\\botDet\\app.py', reloading
+2024-06-21 17:25:18.904 (1718961918.904416)  * Restarting with stat
+2024-06-21 17:25:19.320 (1718961919.320995)  * Debugger is active!
+2024-06-21 17:25:19.327 (1718961919.327995)  * Debugger PIN: 132-571-653
+2024-06-21 17:25:29.478 (1718961929.478237)  * Detected change in 'E:\\botDet\\app.py', reloading
+2024-06-21 17:25:29.515 (1718961929.515241)  * Restarting with stat
+2024-06-21 17:25:29.905 (1718961929.905304)  * Debugger is active!
+2024-06-21 17:25:29.912 (1718961929.912303)  * Debugger PIN: 132-571-653
+2024-06-21 17:25:30.925 (1718961930.925932)  * Detected change in 'E:\\botDet\\app.py', reloading
+2024-06-21 17:25:30.965 (1718961930.965931)  * Restarting with stat
+2024-06-21 17:25:31.364 (1718961931.364001)  * Debugger is active!
+2024-06-21 17:25:31.370 (1718961931.370999)  * Debugger PIN: 132-571-653
+2024-06-21 17:25:33.227 (1718961933.227614) [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-21 17:25:33.227 (1718961933.227614) [33mPress CTRL+C to quit[0m
+2024-06-21 17:25:33.228 (1718961933.228614)  * Restarting with stat
+2024-06-21 17:25:33.645 (1718961933.645943)  * Debugger is active!
+2024-06-21 17:25:33.651 (1718961933.651942)  * Debugger PIN: 132-571-653
