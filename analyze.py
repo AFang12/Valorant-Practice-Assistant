@@ -1,5 +1,6 @@
 import time
 import cProfile
+import pickle
 
 import torch
 import onnxruntime as ort
@@ -21,15 +22,11 @@ def analyze(video_path, key_log_path):
     
     detection = YOLOv8(model_path, video_path, conf_thres, iou_thres)
     res = detection.main()
+    with open('test/res_cache_data.pickle','wb') as f:
+        pickle.dump(res, f)
     print("目标检测完成，分析中")
     print(time.time())
-    # for box, score, class_id, t in res['res']:
-        # t代表视频开始后的第t帧
-        # left, top, width, height = box[0], box[1], box[2], box[3]
-        # print(time.time())
-        # print(item)
-    for item in res['res']:
-        print(type(item))
+            
 
 if __name__ == "__main__":
     print('1',time.time())

@@ -1,0 +1,12 @@
+names:
+- red bot
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: val-bot-0
+  url: https://universe.roboflow.com/yuki-xls91/val-bot-0/dataset/2
+  version: 2
+  workspace: yuki-xls91
+test: /home/admin1/botDet/Val-Bot-0-2/test/images
+train: /home/admin1/botDet/Val-Bot-0-2/train/images
+val: /home/admin1/botDet/Val-Bot-0-2/valid/images

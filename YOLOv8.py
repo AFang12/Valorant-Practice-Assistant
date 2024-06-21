@@ -32,7 +32,7 @@ class YOLOv8:
             self.input_image = input
         self.confidence_thres = confidence_thres
         self.iou_thres = iou_thres
-        yaml_path = yaml_path if yaml_path != None else "data.yaml"
+        yaml_path = yaml_path if yaml_path != None else "data/data.yaml"
         # Load the class names from the COCO dataset
         self.classes = yaml_load(check_yaml(yaml_path))["names"]
         self.save_image = save_image
@@ -125,6 +125,7 @@ class YOLOv8:
 
         Returns:
             numpy.ndarray: The input image with detections drawn on it.
+
         """
 
         # Transpose and squeeze the output to match the expected shape
@@ -143,9 +144,9 @@ class YOLOv8:
         y_factor = self.img_height / self.input_height
 
         # Iterate over each row in the outputs array
-        for t in range(rows):
+        for i in range(rows):
             # Extract the class scores from the current row
-            classes_scores = outputs[t][4:]
+            classes_scores = outputs[i][4:]
 
             # Find the maximum score among the class scores
             max_score = np.amax(classes_scores)
@@ -156,7 +157,7 @@ class YOLOv8:
                 class_id = np.argmax(classes_scores)
 
                 # Extract the bounding box coordinates from the current row
-                x, y, w, h = outputs[t][0], outputs[t][1], outputs[t][2], outputs[t][3]
+                x, y, w, h = outputs[i][0], outputs[i][1], outputs[i][2], outputs[i][3]
 
                 # Calculate the scaled coordinates of the bounding box
                 left = int((x - w / 2) * x_factor)
@@ -178,8 +179,7 @@ class YOLOv8:
             box = boxes[i]
             score = scores[i]
             class_id = class_ids[i]
-            # t代表视频开始后的第t帧
-            outputs.append((box, score, class_id, t))
+            outputs.append((box, score, class_id))
             # Draw the detection on the input image
             if self.save_image:
                 self.draw_detections(input_image, box, score, class_id)
@@ -208,10 +208,12 @@ class YOLOv8:
         if 'video' in filetype.guess(self.input).mime:
             videocapture = cv2.VideoCapture(self.input)
             fps = int(videocapture.get(5))
+            #videocapture.get
             if self.save_image:
                 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
                 video_writer = cv2.VideoWriter(str(self.input / f"result_{time.time()}.mp4"), fourcc, fps, (self.input_width, self.input_height))
             res = []
+
             while videocapture.isOpened():
                 success, frame = videocapture.read()
                 if not success:
@@ -219,11 +221,10 @@ class YOLOv8:
                 img_data = self.preprocess(frame)
                 outputs = session.run(None, {model_inputs[0].name: img_data})
                 
-                outputs = self.postprocess(self.img, outputs)
+                frame, outputs_nms = self.postprocess(self.img, outputs)
                 if self.save_image:
-                    frame, outputs = outputs
                     video_writer.write(frame)
-                res.append(outputs)
+                res.append(outputs_nms)
             return {'fps': fps, 'res':res}
         else:
             # Preprocess the image data

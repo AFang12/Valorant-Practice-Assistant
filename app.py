@@ -3,7 +3,7 @@ import websocket
 import json
 import cv2
 
-# from record_tool import record
+from record_tool import record
 
 app = Flask(__name__)
 app.secret_key = 'qwert'

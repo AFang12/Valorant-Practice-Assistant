@@ -2,3 +2,4 @@ weights/
 __pycache__/
 *.whl
 *.mp4
+*.pickle
